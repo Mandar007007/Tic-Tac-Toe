@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .outer-box{
+            height:100vh;
+            width:100vw;
+            background: linear-gradient(to top left,#3ed8ff, #a8f5ff);
+
+        }
+        .inner-box{
+            font-family: 'lato';
+            width: 400px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 20px 40px;
+            background-color: #ffffff09;
+            backdrop-filter: blur(8px);
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px #212121;
+            z-index: 2  ;
+        }
+        h1{
+            font-size: 2.5rem;
+            color:#212121
+        }
+        .signup-header{
+            font-size: 0.9rem;
+            color:#555;
+        }
+        .signup-body{
+            margin: 20px 0;
+        }
+        .signup-body p{
+            margin:10px 0;
+        }
+        .signup-body p label{
+            display: block;
+        }
+        .signup-body p input{
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #cccc;
+            font-size: 1rem;
+        }
+        .signup-body p input[type="submit"]
+        {
+            background-color: #3498db;
+            border:none;
+            color:white;
+            cursor: pointer;
+        }
+
+        .signup-body p input[type="submit"]:hover{
+            background-color:#12507a;
+        }
+        .circle{
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            background: linear-gradient(to top right,#ffffffaa,#ffffffff);
+            position: absolute;
+        }
+        .c1{
+            top:100px;
+            left:40px;
+        }
+        .c2{
+            bottom:200px;
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    {{>navbar}}
+    {{#if mismatchError}}
+  <div class="custom-alert alert alert-danger" role="alert">
+    {{mismatchError}}
+  </div>
+{{/if}}
+    <div class="outer-box">
+        <div class="inner-box">
+            <header class="signup-header">
+                <h1>Sign Up</h1>
+                <p>It would only take 30 seconds</p>
+                </header>
+            <main class="signup-body">
+            <form action="">
+                <p>
+                    <label for="">Name</label><br>
+                    <input name="name" type="text">
+                </p>
+                <p>
+                    <label for="">Email</label><br>
+                    <input name="email" type="text">
+                </p>
+                <p>
+                    <label for="">Password</label><br>
+                    <input name="password" type="text">
+                </p>
+                <p>
+                    <label for="">Confirm Password</label><br>
+                    <input name="cpassword" type="text">
+                </p>
+                <p>
+                    <input type="submit">
+                </p>
+            </form>
+        </main>
+        </div>
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+    </div>
+</body>
+</html>
